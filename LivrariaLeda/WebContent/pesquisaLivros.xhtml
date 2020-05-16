@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+
+<h:body>
+	<h:form>
+		<p:dialog header="Pesquisar livros" modal="true" visible="visible"
+			widgetVar="pesquisarLivros">
+			<p:panelGrid columns="2">
+				<p:outputLabel value="Título: " />
+				<p:inputText value="#{LivroBean.pesquisaTitulo}" />
+				<p:commandButton value="Pesquisar por Título" update="@form"
+					actionListener="#{LivroBean.pesquisarPorTitulo}" />
+				<p:outputLabel value="Autor: " />
+				<p:inputText value="#{LivroBean.pesquisaAutores}" />
+				<p:commandButton value="Pesquisar por Autores" update="@form"
+					actionListener="#{LivroBean.pesquisarPorAutores}" />
+				<p:outputLabel value="Categoria: " />
+				<p:inputText value="#{LivroBean.pesquisaCategoria}" />
+				<p:commandButton value="Pesquisar por Categoria" update="@form"
+					actionListener="#{LivroBean.pesquisarPorCategoria}" />
+			
+			</p:panelGrid>
+		</p:dialog>
+		
+		</h:form>
+</h:body>
+</html>

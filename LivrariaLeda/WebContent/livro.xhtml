@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+
+<h:body>
+	<h:form>
+		<p:dialog header="Cadastrar livros" modal="true" visible="true"
+			widgetVar="cadastrarLivros">
+			<p:panelGrid columns="2">
+				<p:outputLabel value="Titulo: " />
+				<p:inputText value="#{LivroBean.livro.titulo}" />
+				<p:outputLabel value="Autor: " />
+				<p:inputText value="#{LivroBean.livro.autores}" />
+				<p:outputLabel value="Categoria: " />
+				<p:inputText value="#{LivroBean.livro.categoria}" />
+				<p:commandButton value="Cadastrar Livro" update="@form"
+					actionListener="#{LivroBean.inserir}" />
+
+			</p:panelGrid>
+		</p:dialog>
+
+	</h:form>
+</h:body>
+</html>
